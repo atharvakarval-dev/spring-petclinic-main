@@ -1,7 +1,7 @@
 # ==============================================================================
 # STAGE 1: Build Phase
 # ==============================================================================
-FROM maven:3.9.6-eclipse-temurin-17-alpine AS builder
+FROM maven:3.9.6-eclipse-temurin-25-alpine AS builder
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ RUN mvn package -P css -DskipTests
 # ==============================================================================
 # STAGE 2: Runtime Phase
 # ==============================================================================
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 
 WORKDIR /app
 
